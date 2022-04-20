@@ -28,6 +28,17 @@ function Home() {
                     <RenderCard />
                 </div>
             </div>
+            <div className="row">
+                <div className="col-md m-1">
+                    <RenderCard />
+                </div>
+                <div className="col-md m-1">
+                    <RenderCard />
+                </div>
+                <div className="col-md m-1">
+                    <RenderCard />
+                </div>
+            </div>
         </div>
     )
 }
