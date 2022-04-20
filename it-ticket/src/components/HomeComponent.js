@@ -1,44 +1,72 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Button } from 'reactstrap';
+import { Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FadeTransform } from 'react-animation-components';
 
-function RenderCard() {
+function RenderTabs() {
     return(
-            <Card>
-                <CardBody>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardText>This is the card text.</CardText>
-                    <Button color="success" outline>Click Me</Button>
-                </CardBody>
-            </Card>
+        <div>
+        <Nav tabs>
+          <NavItem>
+            <NavLink
+              active
+              href="#"
+            >
+              Link
+            </NavLink>
+          </NavItem>
+          <Dropdown
+            nav
+            toggle={function noRefCheck(){}}
+          >
+            <DropdownToggle
+              caret
+              nav
+            >
+              Dropdown
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
+                Header
+              </DropdownItem>
+              <DropdownItem disabled>
+                Action
+              </DropdownItem>
+              <DropdownItem>
+                Another Action
+              </DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>
+                Another Action
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <NavItem>
+            <NavLink href="#">
+              Link
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">
+              Another Link
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              disabled
+              href="#"
+            >
+              Disabled Link
+            </NavLink>
+          </NavItem>
+        </Nav>
+      </div>
     );
 }
 
 function Home() {
     return(
         <div className="container">
-            <div className="row">
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard />
-                </div>
-            </div>
+            <RenderTabs />
         </div>
     )
 }
