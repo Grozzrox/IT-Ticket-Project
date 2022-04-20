@@ -14,48 +14,21 @@ function RenderTabs() {
               Link
             </NavLink>
           </NavItem>
-          <Dropdown
-            nav
-            toggle={function noRefCheck(){}}
-          >
-            <DropdownToggle
-              caret
-              nav
-            >
-              Dropdown
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>
-                Header
-              </DropdownItem>
-              <DropdownItem disabled>
-                Action
-              </DropdownItem>
-              <DropdownItem>
-                Another Action
-              </DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>
-                Another Action
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
           <NavItem>
             <NavLink href="#">
-              Link
+              Second Link
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">
-              Another Link
+              Third Link
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
-              disabled
               href="#"
             >
-              Disabled Link
+              Fourth Link
             </NavLink>
           </NavItem>
         </Nav>
