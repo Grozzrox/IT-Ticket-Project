@@ -11,7 +11,7 @@ function RenderTabs({handleToggle, isActive}) {
                 className={isActive ? "active" : null}
                 onClick={handleToggle}
             >
-                Tab1
+                Dashboard
             </NavLink>
             </NavItem>
             <NavItem>
@@ -19,7 +19,7 @@ function RenderTabs({handleToggle, isActive}) {
                 className={isActive ? null : "active"}
                 onClick={handleToggle}
             >
-                More Tabs
+                Tickets
             </NavLink>
             </NavItem>
         </Nav>
@@ -82,7 +82,7 @@ class Home extends Component {
     render() {
         const isActive = this.state.isActive;
         return( 
-            <div className="mt-1 container">
+            <div className="mt-2 container">
                 <RenderTabs 
                 handleToggle={this.handleToggle}
                 isActive={isActive} />
