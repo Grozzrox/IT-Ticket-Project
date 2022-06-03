@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name": "Dashboard"
+    },
+    {
+        "id": 1,
+        "name": "Tickets"
+    },
+    {
+        "id": 2,
+        "name": "Errors"
+    },
+    {
+        "id": 3,
+        "name": "Admin"
+    }
+]
