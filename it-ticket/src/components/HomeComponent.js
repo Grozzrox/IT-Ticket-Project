@@ -45,7 +45,7 @@ function RenderTabs({handleToggle, isSelected}) {
             </NavLink>
             </NavItem>
         </Nav>
-        <TabContent className="mt-5" activeTab={isSelected ? "1" : "2"}>
+        <TabContent className="mt-5" activeTab={!isSelected ? "1" : String(isSelected)}>
             <TabPane tabId="1">
             <Row>
                 <Col sm="12">
@@ -82,6 +82,24 @@ function RenderTabs({handleToggle, isSelected}) {
                     Go somewhere
                     </Button>
                 </Card>
+                </Col>
+            </Row>
+            </TabPane>
+            <TabPane tabId="3">
+            <Row>
+                <Col sm="12">
+                <h4>
+                    Tab 3 Contents
+                </h4>
+                </Col>
+            </Row>
+            </TabPane>
+            <TabPane tabId="4">
+            <Row>
+                <Col sm="12">
+                <h4>
+                    Tab 4 Contents
+                </h4>
                 </Col>
             </Row>
             </TabPane>
