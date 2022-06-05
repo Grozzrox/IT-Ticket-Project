@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
+import Sidebar from './SidebarComponent';
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -9,7 +10,10 @@ class Main extends Component {
     render() {
         const HomePage = () => {
             return (
-                <Home />
+                <div>
+                    <Sidebar />
+                    <Home />
+                </div>
             );
         }
 
