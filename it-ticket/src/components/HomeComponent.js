@@ -3,47 +3,55 @@ import tabData from '../data/tabData';
 import { Nav, NavItem, NavLink, TabContent, TabPane, Row, Col, Card, CardTitle, CardText, Button} from 'reactstrap';
 import { FadeTransform } from 'react-animation-components';
 
+function RenderContent({tabData}) {
+    return(
+        tabData.map( (card) => {
+            return(
+            <Col key={card.id} sm="6">
+                <Card body>
+                    <CardTitle>
+                    {card.name}
+                    </CardTitle>
+                    <CardText>
+                    With supporting text below as a natural lead-in to additional content.
+                    </CardText>
+                    <Button>
+                    Go somewhere
+                    </Button>
+                </Card>
+            </Col>
+            )
+        })
+    )
+}
+
+function RenderNavlink({handleToggle, isSelected, tabData}) {
+    return(
+        tabData.map( (tab) => {
+            return(
+            <NavItem key={tab.id}>
+                <NavLink
+                    className={isSelected === tab.id ? "active" : null}
+                    id={tab.id}
+                    onClick={handleToggle}
+                >
+                    {tab.name}
+                </NavLink>
+            </NavItem>
+            )
+        })
+    )
+}
+
 
 function RenderTabs({handleToggle, isSelected}) {
     return(
         <div className="row tab-shadow">
         <Nav justified tabs>
-            <NavItem>
-            <NavLink
-                className={isSelected === 1 || isSelected === 0 ? "active" : null}
-                id={"1"}
-                onClick={handleToggle}
-            >
-                Dashboard
-            </NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink
-                className={isSelected === 2 ? "active" : null}
-                id={"2"}
-                onClick={handleToggle}
-            >
-                Tickets
-            </NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink
-                className={isSelected === 3 ? "active" : null}
-                id={"3"}
-                onClick={handleToggle}
-            >
-                Errors
-            </NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink
-                className={isSelected === 4 ? "active" : null}
-                id={"4"}
-                onClick={handleToggle}
-            >
-                Admin
-            </NavLink>
-            </NavItem>
+            <RenderNavlink
+            handleToggle={handleToggle}
+            isSelected={isSelected}
+            tabData={tabData} />
         </Nav>
         <TabContent className="mt-5" activeTab={!isSelected ? "1" : String(isSelected)}>
             <TabPane tabId="1">
@@ -57,32 +65,7 @@ function RenderTabs({handleToggle, isSelected}) {
             </TabPane>
             <TabPane tabId="2">
             <Row>
-                <Col sm="6">
-                <Card body>
-                    <CardTitle>
-                    Special Title Treatment
-                    </CardTitle>
-                    <CardText>
-                    With supporting text below as a natural lead-in to additional content.
-                    </CardText>
-                    <Button>
-                    Go somewhere
-                    </Button>
-                </Card>
-                </Col>
-                <Col sm="6">
-                <Card body>
-                    <CardTitle>
-                    Special Title Treatment
-                    </CardTitle>
-                    <CardText>
-                    With supporting text below as a natural lead-in to additional content.
-                    </CardText>
-                    <Button>
-                    Go somewhere
-                    </Button>
-                </Card>
-                </Col>
+                <RenderContent tabData={tabData} />
             </Row>
             </TabPane>
             <TabPane tabId="3">
@@ -112,12 +95,12 @@ function RenderTabs({handleToggle, isSelected}) {
 class Home extends Component {
     constructor() {
         super();
-        this.state = { isSelected: 0};
+        this.state = { isSelected: 1};
     }
 
     handleToggle = (event) => {
         this.setState({ isSelected: Number(event.target.id) });
-        console.log(this.isSelected);
+        console.log(this.state);
         
     }
 
