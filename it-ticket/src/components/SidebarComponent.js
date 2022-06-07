@@ -6,13 +6,21 @@ class Sidebar extends Component {
     render() {
         return(
             <ProSidebar>
-            <Menu iconShape="square">
-                <MenuItem icon={"#"}>Dashboard</MenuItem>
-                <SubMenu title="Components" icon={"#"}>
-                <MenuItem>Component 1</MenuItem>
-                <MenuItem>Component 2</MenuItem>
-                </SubMenu>
-            </Menu>
+                <SidebarHeader>
+                Header
+                </SidebarHeader>
+                <SidebarContent>
+                    <Menu iconShape="square">
+                        <MenuItem icon={"#"}>Dashboard</MenuItem>
+                        <SubMenu title="Components" icon={"#"}>
+                        <MenuItem>Component 1</MenuItem>
+                        <MenuItem>Component 2</MenuItem>
+                        </SubMenu>
+                    </Menu>
+                </SidebarContent>
+                <SidebarFooter>
+                    Copyright
+                </SidebarFooter>
             </ProSidebar>
         )
     }
