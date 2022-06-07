@@ -8,7 +8,7 @@ function RenderContent({tabData}) {
         tabData.map( (card) => {
             return(
             <Col key={card.id} sm="6">
-                <Card body>
+                <Card className="card" body>
                     <CardTitle>
                     {card.name}
                     </CardTitle>
@@ -107,7 +107,7 @@ class Home extends Component {
     render() {
         const isSelected = this.state.isSelected;
         return( 
-            <div className="mt-2 container">
+            <div className="container">
                 <RenderTabs 
                 isSelected={isSelected}
                 handleToggle={this.handleToggle}/>
